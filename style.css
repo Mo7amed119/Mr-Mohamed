@@ -1,259 +1,396 @@
-/* إعدادات عامة */
+
+/* Global Variables & Reset */
+:root {
+    --primary-color: #0f2c59;
+    --secondary-color: #d4af37;
+    --accent-color: #1a4d8c;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #2b2b2b;
+    --text-muted: #6c757d;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f8fafc;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
-    width: 85%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* الهيدر */
+/* Header & Navigation */
 .navbar {
-    background-color: #1e3a8a;
+    background-color: var(--primary-color);
     color: #fff;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #38bdf8;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-nav ul {
+.nav-links {
     display: flex;
     list-style: none;
-    align-items: center;
+    gap: 20px;
 }
 
-nav ul li {
-    margin-right: 1.5rem;
-}
-
-nav ul li a:hover {
-    color: #38bdf8;
-}
-
-.btn-nav {
-    background-color: #2563eb;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    color: #fff !important;
-    transition: background 0.3s;
-}
-
-.btn-nav:hover {
-    background-color: #1d4ed8;
-}
-
-/* الهيرو */
-.hero {
-    background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1350&q=80') center/cover;
+.nav-link {
     color: #fff;
-    text-align: center;
-    padding: 6rem 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: var(--transition);
+    cursor: pointer;
 }
 
-.hero h1 {
-    font-size: 2.3rem;
-    margin-bottom: 1rem;
+.nav-link:hover, .nav-link.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-.hero h1 span {
-    color: #38bdf8;
+/* Main Content Wrapper */
+.content-container {
+    flex: 1;
+    max-width: 1200px;
+    width: 90%;
+    margin: 2rem auto;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+/* Page Section Visibility Toggle */
+.page-section {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
-.hero-btns .btn-primary, .hero-btns .btn-secondary {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 0.5rem;
+.page-section.active {
+    display: block;
 }
 
-.btn-primary {
-    background-color: #2563eb;
-    color: #fff;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.btn-secondary {
-    background-color: #fff;
-    color: #1e3a8a;
-}
-
-/* الأقسام العامة */
-.section {
-    padding: 4rem 0;
-}
-
-.bg-light {
-    background-color: #f1f5f9;
-}
-
+/* Titles */
 .section-title {
     text-align: center;
-    font-size: 1.8rem;
-    color: #1e3a8a;
-    margin-bottom: 2.5rem;
-    position: relative;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
-/* الشبكة والكروت */
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Hero Section */
+#home {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.badge {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Cards & Grid Layouts */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 25px;
 }
 
 .card {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
     text-align: center;
-    transition: transform 0.3s;
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-.card .icon {
+.card-icon {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
 }
 
 .card h3 {
-    color: #1e3a8a;
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
 }
 
-.review-card p {
-    font-style: italic;
-    margin-bottom: 1rem;
+/* Locations */
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.location-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.location-card.highlight {
+    border: 2px solid var(--secondary-color);
+}
+
+.loc-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loc-header i {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+}
+
+.loc-body {
+    padding: 20px;
+}
+
+.loc-body h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.loc-body p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: #eef4ff;
+    color: var(--accent-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Reviews */
+.review-card {
+    border-top: 4px solid var(--secondary-color);
+}
+
+.stars {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .review-card h4 {
-    color: #2563eb;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
 }
 
-/* التواصل والمعلومات */
-.contact-box {
+/* Contact & Form */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.contact-info {
     background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: auto;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-right: 5px solid #2563eb;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.contact-info p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.contact-info a {
-    color: #2563eb;
+.info-item i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
     font-weight: bold;
+    margin-top: 10px;
+    transition: var(--transition);
 }
 
-/* نموذج الحجز */
+.whatsapp-btn:hover {
+    background: #1eb956;
+}
+
 .booking-form {
-    max-width: 500px;
-    margin: auto;
     background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.booking-form h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 .form-group {
-    margin-bottom: 1.2rem;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .form-group input, .form-group select {
     width: 100%;
-    padding: 0.8rem;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1rem;
 }
 
-.btn-submit {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #2563eb;
-    color: #fff;
+/* Buttons */
+.btn {
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
+    border-radius: 6px;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: var(--transition);
 }
 
-.btn-submit:hover {
-    background-color: #1d4ed8;
+.primary-btn {
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-/* الفوتر */
+.primary-btn:hover {
+    background: #c29d2b;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.secondary-btn:hover {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Footer */
 footer {
-    background-color: #0f172a;
+    background-color: var(--primary-color);
     color: #fff;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem;
+    margin-top: auto;
 }
 
-/* تصميم متجاوب للهواتف */
+/* Responsive */
 @media (max-width: 768px) {
-    .navbar .container {
+    .navbar {
         flex-direction: column;
-        gap: 1rem;
+        gap: 15px;
     }
-    nav ul {
+    
+    .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem;
+        gap: 8px;
     }
-    nav ul li {
-        margin-right: 0;
+
+    .hero-content h1 {
+        font-size: 1.8rem;
     }
 }

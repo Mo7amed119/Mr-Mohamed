@@ -1,157 +1,222 @@
-<!DOCTYPE html>
+CTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مستر محمد عطا الله عطا الله - مدرس اللغة الإنجليزية</title>
+    <title>مستر محمد عطاالله - مدرس اللغة الإنجليزية</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- الهيدر وقائمة التنقل -->
+    <!-- الهيدر ونظام التنقل (SPA Header & Navigation) -->
     <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">مستر محمد عطا الله عطا الله</a>
-            <nav>
-                <ul>
-                    <li><a href="#about">المؤهلات</a></li>
-                    <li><a href="#levels">المراحل الدراسية</a></li>
-                    <li><a href="#reviews">آراء الطلاب</a></li>
-                    <li><a href="#contact">تواصل معنا</a></li>
-                    <li><a href="#booking" class="btn-nav">احجز مكانك الان</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>مستر محمد عطاالله</span>
         </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" onclick="showSection('home')">الرئيسية</a></li>
+                <li><a href="#qualifications" class="nav-link" onclick="showSection('qualifications')">المؤهلات</a></li>
+                <li><a href="#levels" class="nav-link" onclick="showSection('levels')">المراحل الدراسية</a></li>
+                <li><a href="#locations" class="nav-link" onclick="showSection('locations')">أماكن الدروس</a></li>
+                <li><a href="#reviews" class="nav-link" onclick="showSection('reviews')">آراء الطلاب</a></li>
+                <li><a href="#contact" class="nav-link" onclick="showSection('contact')">تواصل واحجز</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- القسم الرئيسي (Hero Section) -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>أتقن اللغة الإنجليزية مع <span>مستر محمد عطا الله عطا الله</span></h1>
-            <p>طرق تدريس حديثة، تبسيط للمناهج، ومتابعة مستمرة للوصول للدرجة النهائية.</p>
-            <div class="hero-btns">
-                <a href="#booking" class="btn-primary">احجز مكانك الان</a>
-                <a href="#contact" class="btn-secondary">مكان الدرس والمعلومات</a>
-            </div>
-        </div>
-    </section>
+    <main class="content-container">
 
-    <!-- قسم المؤهلات -->
-    <section id="about" class="section bg-light">
-        <div class="container">
+        <!-- قسم الرئيسية (Home Section) -->
+        <section id="home" class="page-section active">
+            <div class="hero-content">
+                <span class="badge">خبير اللغة الإنجليزية</span>
+                <h1>طريقك للتميز والتقفيل في اللغة الإنجليزية</h1>
+                <p>مع المستر محمد عطاالله، نتبسط المعلومة، نطبق بالتمارين، ونوصل للدرجة النهائية بثقة وشغف.</p>
+                <div class="hero-buttons">
+                    <button class="btn primary-btn" onclick="showSection('contact')">احجز مكانك الآن <i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="btn secondary-btn" onclick="showSection('levels')">استكشف المراحل</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المؤهلات (Qualifications Section) -->
+        <section id="qualifications" class="page-section">
             <h2 class="section-title">المؤهلات والخبرات</h2>
+            <p class="section-subtitle">خبرة طويلة وطرق تدريس حديثة تضمن لك التفوق</p>
+            
             <div class="cards-grid">
                 <div class="card">
-                    <div class="icon">🎓</div>
-                    <h3>ليسانس تربية</h3>
-                    <p>متخصص في تدريس اللغة الإنجليزية وطرق التدريس الحديثة.</p>
+                    <div class="card-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h3>مؤهل تربوي متخصص</h3>
+                    <p>ليسانس آداب وتتربية لغة إنجليزية مع اعتماد أساليب التدريس الحديثة.</p>
                 </div>
                 <div class="card">
-                    <div class="icon">📚</div>
-                    <h3>خبرة طويلة</h3>
-                    <p>خبرة واسعة في تدريس المناهج الدراسية وتأسيس الطلاب في القواعد واللغة.</p>
+                    <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>خبرة سنوات في التدريس</h3>
+                    <p>خبرة واسعة في تدريس المناهج وتأهيل الطلاب للامتحانات النهائية بأعلى المعدلات.</p>
                 </div>
                 <div class="card">
-                    <div class="icon">⭐</div>
-                    <h3>متابعة دورية</h3>
-                    <p>امتحانات أسبوعية وتقارير مستمرة لولي الأمر للوقوف على مستوى الطالب.</p>
+                    <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>طرق تبسيط الجرامر</h3>
+                    <p>أسلوب مميز في شرح قواعد اللغة والـ Skills بأسلوب ممتع وسهل التذكر.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم المراحل الدراسية -->
-    <section id="levels" class="section">
-        <div class="container">
+        <!-- قسم المراحل الدراسية (Levels Section) -->
+        <section id="levels" class="page-section">
             <h2 class="section-title">المراحل الدراسية</h2>
+            <p class="section-subtitle">نغطي كافة المراحل مع متابعة دورية واختبارات مستمرة</p>
+
             <div class="cards-grid">
-                <div class="card level-card">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-child"></i></div>
                     <h3>المرحلة الابتدائية</h3>
-                    <p>تأسيس شامل في النطق الصحيح، القواعد الأساسية، وبناء حصيلة لغوية قوية.</p>
+                    <p>تأسيس قوي في النطق (Phonics)، القواعد الأساسية، وبناء حصيلة لغوية ممتازة.</p>
                 </div>
-                <div class="card level-card">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
                     <h3>المرحلة الإعدادية</h3>
-                    <p>شرح مبسط للمناهج الدراسية، تدريب مكثف على الامتحانات، وتمكين مهارات الكتابة.</p>
+                    <p>تمكين مهارات الحل، استيعاب النصوص، وتقفيل أسئلة امتحانات المحافظات.</p>
                 </div>
-                <div class="card level-card">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
                     <h3>المرحلة الثانوية</h3>
-                    <p>تغطية كاملة للجرامر، القصة، الفهم والاستيعاب، والتدريب على نظام الامتحانات الحديث.</p>
+                    <p>تدريب مكثف على النظام الجديد، القراءة المتنورة، وتدريبات النظام الحديث.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم آراء الطلاب -->
-    <section id="reviews" class="section bg-light">
-        <div class="container">
+        <!-- قسم أماكن الدروس (Locations Section) -->
+        <section id="locations" class="page-section">
+            <h2 class="section-title">أماكن ومقرات الدروس</h2>
+            <p class="section-subtitle">نوفر خيارات متنوعة لراحتك بين مجموعات السنتر والدروس الخاصة</p>
+
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="loc-header">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <h3>مجموعات السنتر</h3>
+                    </div>
+                    <div class="loc-body">
+                        <h4>حضانة الشيخ حمادة عطاالله</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> المقر الرئيسي لمجموعات الدروس</p>
+                        <span class="tag">مجموعات ممتازة ومتابعة دورية</span>
+                    </div>
+                </div>
+
+                <div class="location-card highlight">
+                    <div class="loc-header">
+                        <i class="fa-solid fa-house-user"></i>
+                        <h3>الدروس الخاصة</h3>
+                    </div>
+                    <div class="loc-body">
+                        <h4>دروس خاص (Private)</h4>
+                        <p><i class="fa-solid fa-star"></i> اهتمام فردي ومواعيد مخصصة للطالب</p>
+                        <span class="tag">الأماكن محدودة جداً</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم آراء الطلاب (Reviews Section) -->
+        <section id="reviews" class="page-section">
             <h2 class="section-title">آراء الطلاب وأولياء الأمور</h2>
+            <p class="section-subtitle">ثقتكم هي سر نجاحنا وتفوقنا المستمر</p>
+
             <div class="cards-grid">
                 <div class="card review-card">
-                    <p>"أفضل مدرس انجليزي مع مستر محمد عطا الله عطا الله، شرح الجرامر بسيط وبقيت أحل الامتحانات بسهولة."</p>
-                    <h4>- أحمد محمود (طالب)</h4>
+                    <div class="stars">★★★★★</div>
+                    <p>"أحسن مستر إنجليزي! الجرامر بقى أسهل حاجة عندي بفضل شرح مستر محمد عطاالله."</p>
+                    <h4>— أحمد علي (طالب إعدادي)</h4>
                 </div>
                 <div class="card review-card">
-                    <p>"متابعة ممتازة ومستوى ابني فرق جداً في وقت قصير. شكراً لحضرتك يا مستر."</p>
-                    <h4>- أم سارة (ولية أمر)</h4>
+                    <div class="stars">★★★★★</div>
+                    <p>"متابعة ممتازة واهتمام كبير بكل طالب. ابني فرق جداً في المستوى والدرجات."</p>
+                    <h4>— أم محمود (ولية أمر)</h4>
                 </div>
                 <div class="card review-card">
-                    <p>"طريقة التأسيس والشرح ممتعة وغير معقدة إطلاقاً."</p>
-                    <h4>- عمر خالد (طالب)</h4>
+                    <div class="stars">★★★★★</div>
+                    <p>"طريقة الشرح والحل على الامتحانات خلتني أدخل الامتحان وأنا مطمن وقفل المادة."</p>
+                    <h4>— سارة محمد (طالبة)</h4>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم تواصل معنا ومكان الدرس -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">تواصل معنا ومكان الدرس</h2>
-            <div class="contact-box">
+        <!-- قسم تواصل معنا واحجز (Contact Section) -->
+        <section id="contact" class="page-section">
+            <h2 class="section-title">احجز مكانك الآن</h2>
+            <p class="section-subtitle">تواصل معنا مباشرة عبر الواتساب أو الهاتف لحجز مكانك</p>
+
+            <div class="contact-container">
                 <div class="contact-info">
-                    <h3>معلومات الاتصال</h3>
-                    <p><strong>👨‍🏫 المدرس:</strong> مستر محمد عطا الله عطا الله</p>
-                    <p><strong>📞 رقم التواصل:</strong> <a href="tel:01091502642" dir="ltr">010 91502642</a></p>
-                    <p><strong>💬 واتساب:</strong> <a href="https://wa.me/201091502642" target="_blank" dir="ltr">010 91502642</a></p>
-                    <p><strong>📍 مكان الدراسة:</strong> مكان الدروس في حضانة الشيخ محمد عطاالله</p>
+                    <div class="info-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h4>التواصل المباشر والواتساب</h4>
+                            <p>01091502642</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>مكان الدروس الجماعية</h4>
+                            <p>حضانة الشيخ حمادة عطاالله</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-user-check"></i>
+                        <div>
+                            <h4>الدروس الخاصة</h4>
+                            <p>متوفرة حسب المواعيد المتاحة</p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/201091502642" target="_blank" class="whatsapp-btn">
+                        <i class="fa-brands fa-whatsapp"></i> مراسلة سريعة عبر الواتساب
+                    </a>
                 </div>
+
+                <form class="booking-form" id="bookingForm">
+                    <h3>استمارة حجز درس</h3>
+                    <div class="form-group">
+                        <label for="studentName">اسم الطالب رباعي</label>
+                        <input type="text" id="studentName" placeholder="أدخل اسمك الكريم" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف / الواتساب</label>
+                        <input type="tel" id="phone" placeholder="010xxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade">المرحلة الدراسية</label>
+                        <select id="grade" required>
+                            <option value="" disabled selected>اختر المرحلة الدراسية</option>
+                            <option value="الابتدائية">المرحلة الابتدائية</option>
+                            <option value="الإعدادية">المرحلة الإعدادية</option>
+                            <option value="الثانوية">المرحلة الثانوية</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">نوع الدرس المطلوبة</label>
+                        <select id="type" required>
+                            <option value="سنتر - حضانة الشيخ حمادة عطاالله">مجموعات السنتر (حضانة الشيخ حمادة)</option>
+                            <option value="درس خاص (Private)">درس خاص (Private)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn primary-btn submit-btn">تأكيد الحجز والإرسال عبر الواتساب</button>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- قسم احجز مكانك الان -->
-    <section id="booking" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">احجز مكانك الان مع مستر محمد عطا الله عطا الله</h2>
-            <form class="booking-form">
-                <div class="form-group">
-                    <label for="student-name">اسم الطالب رباعي:</label>
-                    <input type="text" id="student-name" required placeholder="أدخل اسم الطالب">
-                </div>
-                <div class="form-group">
-                    <label for="phone">رقم الهاتف (واتساب):</label>
-                    <input type="tel" id="phone" required placeholder="010XXXXXXXX">
-                </div>
-                <div class="form-group">
-                    <label for="grade">المرحلة الدراسية / الصف:</label>
-                    <select id="grade" required>
-                        <option value="">اختر الصف الدراسي</option>
-                        <option value="primary">المرحلة الابتدائية</option>
-                        <option value="prep">المرحلة الإعدادية</option>
-                        <option value="secondary">المرحلة الثانوية</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">تأكيد الحجز</button>
-            </form>
-        </div>
-    </section>
+    </main>
 
-    <!-- الفوتر -->
     <footer>
-        <div class="container">
-            <p>جميع الحقوق محفوظة &copy; 2026 - مستر محمد عطا الله عطا الله</p>
-        </div>
+        <p>جميع الحقوق محفوظة © 2026 لمستر <strong>محمد عطاالله</strong> - مدرس اللغة الإنجليزية</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
